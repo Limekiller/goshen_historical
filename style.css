@@ -1,0 +1,51 @@
+/*
+ * Theme Name: Goshen Historical
+ * Author: Bryce Yoder
+ * Description: Custom theme for the Goshen Historical Society
+ * Version: 0.0.1
+ * */
+
+* {
+   font-family:temeraire, serif; 
+   font-weight:400;
+   font-style:normal;
+}
+.blog-header {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: white;
+}
+.header-content {
+    position:relative;
+    z-index:100;
+}
+.logo img {
+    width:200px;
+}
+.divider {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.header-content .divider {
+    width:150px;
+    margin-left:30px;
+}
+nav {
+    list-style:none;
+}
+nav a{
+    font-weight:700;
+    color:black;
+    font-size: 20px;
+    line-height: 40px;
+}
+.header-background {
+    position: absolute;
+    left: -75px;
+    z-index: 0;
+    top:0px;
+}
