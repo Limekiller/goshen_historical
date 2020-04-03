@@ -10,7 +10,6 @@
 
   <title><?php echo get_bloginfo( 'name' ); ?></title>
   <script src="https://kit.fontawesome.com/cae1618de2.js" crossorigin="anonymous"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/kok3gzl.css">
   <link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +41,7 @@
                 <a href='https://instagram.com'><i class="fab fa-instagram"></i></a>
             </div>
             <img class='divider' src='http://localhost/goshen_historical/wp-content/uploads/2020/04/divider.png' />
-            <b>Hours</b><br /><br />
+            <br /><b>Hours</b><br /><br />
             <span>Thur, Fri, Sat</span><br />
             <span><i>11:00 AM – 3:00 PM</i></span><br /><br />
             <span>First Friday</span><br />

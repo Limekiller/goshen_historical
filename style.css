@@ -8,6 +8,20 @@
 * {
    font-family:temeraire, serif; 
    font-weight:400;
+   color:#333;
+}
+body {
+    margin:0;
+}
+p {
+    font-size:16px;
+    line-height:35px;
+}
+a {
+    text-decoration:none;
+}
+b {
+    font-weight:700;
 }
 body {
     background-image:url('http://localhost/goshen_historical/wp-content/uploads/2020/04/seamless-background-textures-7-780x780-1.jpg');
@@ -15,9 +29,18 @@ body {
 }
 h1 {
     font-weight:900;
+    font-size:45px;
 }
 h2 {
     font-weight:700;
+}
+*.right {
+    text-align:right;
+}
+.container {
+    max-width:900px;
+    margin-left:35%;
+    margin-right:15%;
 }
 
 /* HEADER */
@@ -28,7 +51,6 @@ h2 {
     top: 0;
     left: 0;
     padding: 20px;
-    background: white;
     z-index:99;
 }
 .header-content {
@@ -41,6 +63,7 @@ h2 {
 .divider {
     margin-top:20px;
     margin-bottom:20px;
+    max-width:100%;
 }
 .header-content .divider {
     width:150px;
@@ -71,6 +94,21 @@ nav a{
     left: -100px;
     z-index: 0;
     top:0px;
+}
+
+/* FOOTER */
+.blog-footer {
+    margin-top:100px;
+    width:100%;
+    background:#1c1c1c;
+    padding-top:100px;
+    padding-bottom:25px;
+}
+.blog-footer * {
+    color:white;
+}
+.blog-footer a {
+    color:wheat;
 }
 
 /* HOMEPAGE */
@@ -110,6 +148,25 @@ nav a{
 .title h2 {
     font-size:30px;
 }
+.news-container {
+    display:flex;
+    justify-content:start;
+}
+.news-container .news {
+    width: 250px;
+    margin-right: 30px;
+    flex-shrink: 1;
+    padding: 10px;
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+.news img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
 
 
 @keyframes scrolling-image-first {
