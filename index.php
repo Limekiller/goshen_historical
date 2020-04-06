@@ -1,31 +1,29 @@
-<?php get_header(); ?>
-    <div class='scrolling-images'>
-        <div class='scrolling-images-container first'>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-        </div>
-        <div class='scrolling-images-container second'>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-            <div class='img'></div>
-        </div>
+<?php get_header();
+
+wp_enqueue_script('home', get_template_directory_uri().'/public/scripts/home.js', array('jquery', 'main'));?>
+
+    <div class='header-image'>
+        <?php $url = wp_get_attachment_url( get_post_thumbnail_id( 14 ), 'thumbnail' );?>
+        <img src='<?php echo $url;?>' />
     </div>
     <div class="container">
         <div class='title'>
-            <h1>Step into history</h1>
-            <h2><i>Right here in Goshen</i></h2>
+            <h1>News</h1>
         </div>
-        <div class="row">
-            <div class="col-sm-8 blog-main">
-                <?php get_template_part( 'content', get_post_format() ); ?>
-            </div> <!-- /.blog-main -->
-            <?php get_sidebar(); ?>
-        </div> <!-- /.row -->
+            <div class='news-container'>
+                <?php while ( have_posts() ) : the_post(); ?>
+                    <a href='<?php echo the_permalink();?>'>
+                        <div class='news'>
+                            <?php if (has_post_thumbnail()): ?>
+                                <?php echo the_post_thumbnail();?>
+                            <?php endif; ?>
+                            <div class='news-info-holder'>
+                                <h2><?php echo the_title();?></h2>
+                                <?php echo the_date();?>
+                                <p><?php echo wp_trim_words(get_the_content(), 20, '...');?></p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endwhile; ?>
+            </div>
 <?php get_footer(); ?>
