@@ -34,7 +34,7 @@ b {
     font-weight:700;
 }
 body {
-    background-image:url('http://localhost/goshen_historical/wp-content/uploads/2020/04/seamless-background-textures-7-780x780-1.jpg');
+    background-image:url('http://xbp.qvj.mybluehost.me/Devl_GHS/wp-content/uploads/2020/04/seamless-background-textures-7-780x780-1.jpg');
     overflow-x:hidden;
 }
 h1 {
@@ -93,6 +93,10 @@ ul {
 .title h2 {
     font-size:30px;
     margin-top:-65px;
+}
+.site-wrapper {
+    overflow:hidden;
+    position:relative;
 }
 
 /* HEADER */
