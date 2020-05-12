@@ -94,9 +94,12 @@ ul {
     font-size:30px;
     margin-top:-65px;
 }
+html, body, .site-wrapper {
+    overflow-x:hidden;
+    position:relative;
+}
 .site-wrapper {
     overflow:hidden;
-    position:relative;
 }
 
 /* HEADER */

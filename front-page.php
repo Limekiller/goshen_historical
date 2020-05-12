@@ -3,49 +3,22 @@
 wp_enqueue_script('home', get_template_directory_uri().'/public/scripts/home.js', array('jquery', 'main'));
 wp_enqueue_style('home', get_template_directory_uri().'/public/styles/home.css');?>
 
-    <?php $scrolling_images = get_field('scrolling_images');?>
-    <div class='scrolling-images'>
-        <div class='scrolling-images-container first'>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_1"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_2"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_3"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_4"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_5"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_6"];?>' />
-            </div>
+    
+    <?php 
+    $slideshow = get_field('slideshow');
+    if ($slideshow) {  ?>
+        <div class='slide-container'>
+            <?php for ($i = 1; $i <= 3; $i++) {  
+                if ($i === 1) { ?>
+                    <img class='active' src='<?php echo $slideshow['slideshow_image_'.$i]?>' />
+                <?php } else { ?>
+                    <img src='<?php echo $slideshow['slideshow_image_'.$i]?>' />
+                <?php } 
+            } ?>
+            <div class='mask'></div>
         </div>
-        <div class='scrolling-images-container second'>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_1"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_2"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_3"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_4"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_5"];?>' />
-            </div>
-            <div class='img'>
-                <img src='<?php echo $scrolling_images["scrolling_image_6"];?>' />
-            </div>
-        </div>
-    </div>
+    <?php } ?>
+
     <div class="container">
         <?php
         $headline = get_field("headline");

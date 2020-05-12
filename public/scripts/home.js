@@ -2,10 +2,41 @@ jQuery(document).ready(() => {
 
     checkVisibilityNews();
 
+    let homepageArray = [];
+    jQuery(".slide-container img").each(function() {
+       homepageArray.push(jQuery(this));
+    });
+    window.setTimeout(() => {
+        advanceSlide(homepageArray, 1);
+    }, 15000);
+
     jQuery(window).on('scroll', () => {
         checkVisibilityNews();
     });
+
 });
+
+function advanceSlide(slideArray, slideToSetActive) {
+   jQuery('.slide-container').addClass('closed');
+
+
+   window.setTimeout(() => {
+       jQuery('.slide-container .active').removeClass('active');
+       slideArray[slideToSetActive].addClass('active');
+       jQuery('.slide-container').removeClass('closed');
+   }, 700);
+
+   if (slideToSetActive === 2) {
+        slideToSetActive = 0;
+   } else {
+        slideToSetActive += 1;
+   }
+
+   window.setTimeout(() => {
+        advanceSlide(slideArray, slideToSetActive);
+   }, 10000);
+
+}
 
 function checkVisibilityNews() {
 
