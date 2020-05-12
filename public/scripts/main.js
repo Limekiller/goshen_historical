@@ -44,7 +44,7 @@ function checkVisibility() {
     });
 }
 function checkWindowForMenu() {
-    if (jQuery(window).width() <= 1000) {
+    if (jQuery(window).width() <= 700) {
        jQuery('.blog-header').addClass('closed');
        jQuery('.header-hand').addClass('closed');
     }

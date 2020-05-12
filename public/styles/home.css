@@ -31,7 +31,7 @@
     transform:translateX(-50px);
 }
 .slide-container.closed .mask {
-    width:100%;
+    width:110%;
 }
 
 @keyframes load-slide {
