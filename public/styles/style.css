@@ -258,7 +258,7 @@ li .sub-menu {
 }
 
 /* MOBILE */
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1024px) {
    .title h1 {
         line-height:65px;
         margin-bottom:85px;
