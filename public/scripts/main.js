@@ -27,8 +27,10 @@ jQuery(document).ready(() => {
     });
 
     checkWindowForMenu();
+    resizeHeader();
     jQuery(window).resize(() => {
         checkWindowForMenu();
+        resizeHeader();
     });
     jQuery('.header-hand').click((e) => {
        jQuery('.blog-header').toggleClass('closed');
@@ -43,9 +45,15 @@ function checkVisibility() {
         }
     });
 }
+
 function checkWindowForMenu() {
-    if (jQuery(window).width() <= 700) {
+    if (jQuery(window).width() <= 1000) {
        jQuery('.blog-header').addClass('closed');
        jQuery('.header-hand').addClass('closed');
     }
+}
+
+function resizeHeader() {
+    let scaleFactor = (window.innerHeight / 1080) + 0.05;
+    jQuery('.header-resizer').css('transform', 'scale('+scaleFactor+')');
 }

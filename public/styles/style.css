@@ -89,6 +89,8 @@ ul {
 }
 .title h1 {
     font-size:75px;
+    line-height:65px;
+    margin-bottom:90px;
 }
 .title h2 {
     font-size:30px;
@@ -109,12 +111,16 @@ html, body, .site-wrapper {
     height: 100%;
     top: 0;
     left: 0;
-    padding: 20px;
+    padding-left: 20px;
     z-index:99;
-    transition:transform 0.4s ease;
+    transition:left 0.4s ease;
+}
+.header-resizer {
+    transform-origin:top left;
+    padding-top: 20px;
 }
 .blog-header.closed {
-    transform:translateX(-300px);
+    left:-30vh;
 }
 .header-content {
     position:relative;
@@ -184,7 +190,7 @@ li .sub-menu {
     bottom: 60px;
     position: absolute;
     width: 60px;
-    right: -70px;
+    left: 30vh;
     transform: scaleX(-1);
 }
 .header-hand:hover {
@@ -258,6 +264,11 @@ li .sub-menu {
 }
 
 /* MOBILE */
+@media screen and (max-width:1500px) {
+    .news-container a {
+        width:50%;
+    }
+}
 @media screen and (max-width:1024px) {
    .title h1 {
         line-height:65px;
@@ -269,7 +280,6 @@ li .sub-menu {
    }
    .header-content {
         overflow: hidden auto;
-        height: 97vh;
    }
 }
 @media screen and (max-width:700px) {
