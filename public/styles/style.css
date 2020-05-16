@@ -102,6 +102,16 @@ html, body, .site-wrapper {
 }
 .site-wrapper {
     overflow:hidden;
+    min-height:100vh;
+}
+.cart {
+    background:white;
+}
+.cart td, .shop_table td {
+    border:none;
+}
+.shop_table {
+    background:white;
 }
 
 /* HEADER */
@@ -114,6 +124,8 @@ html, body, .site-wrapper {
     padding-left: 20px;
     z-index:99;
     transition:left 0.4s ease;
+    opacity:0;
+    animation:fade-in 0.4s ease 0.4s forwards;
 }
 .header-resizer {
     transform-origin:top left;
@@ -263,6 +275,19 @@ li .sub-menu {
     padding:2em 0;
 }
 
+/* WOOCOMMERCE */
+.custom-cart {
+    padding:20px;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    background:#1c1c1c;
+}
+.wc-block-all-products * {
+   opacity:1;
+   animation:none;
+}
+
 /* MOBILE */
 @media screen and (max-width:1500px) {
     .news-container a {
@@ -291,6 +316,10 @@ li .sub-menu {
 @keyframes fade-up {
     from {opacity:0; transform:translateY(20px);}
     to {opacity:1; transform:translateY(0px);}
+}
+@keyframes fade-in {
+    from {opacity:0;}
+    to {opacity:1;}
 }
 @keyframes grow {
     from {height:0px;}
