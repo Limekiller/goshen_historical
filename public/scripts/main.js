@@ -10,9 +10,16 @@ jQuery.fn.inView = function() {
 
 jQuery(document).ready(() => {
     checkVisibility();
+    checkWindowForMenu();
+    resizeHeader();
 
     jQuery(document).scroll(() => {
         checkVisibility();
+    });
+
+    jQuery(window).resize(() => {
+        checkWindowForMenu();
+        resizeHeader();
     });
 
     jQuery('li').mouseenter(function() {
@@ -25,22 +32,16 @@ jQuery(document).ready(() => {
         jQuery('.sub-menu').removeClass('active');
         jQuery('.sub-menu').css('height', '0px');
     });
-
-    checkWindowForMenu();
-    resizeHeader();
-    jQuery(window).resize(() => {
-        checkWindowForMenu();
-        resizeHeader();
-    });
     jQuery('.header-hand').click((e) => {
        jQuery('.blog-header').toggleClass('closed');
        jQuery(e.target).toggleClass('closed');
     });
+
 });
 
 function checkVisibility() {
     jQuery(".container *").each(function() {
-        if (jQuery(this).inView()) {
+        if (jQuery(this).inView() && jQuery(this).css('opacity') == 0) {
             jQuery(this).css('animation', 'fade-up 0.4s 0.2s ease forwards');
         }
     });

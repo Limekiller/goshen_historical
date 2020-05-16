@@ -13,6 +13,10 @@ function register_menus() {
 
 function add_scripts() {
     wp_enqueue_script('main', get_template_directory_uri().'/public/scripts/main.js', array('jquery'), '1.0');
+
+    wp_enqueue_script('ajax', get_template_directory_uri().'/public/scripts/ajax.js', array('jquery'), '1.0');
+    wp_localize_script('ajax', 'ajax', array('ajaxurl' => get_template_directory_uri().'/ajax.php'));
+
     wp_enqueue_style('css', get_template_directory_uri().'/public/styles/style.css');
 }
 
@@ -45,7 +49,12 @@ function create_posts_shortcode($atts) {
     return $final_string;
 }
 
+function get_wc_cart_info() {
+    echo json_encode([WC()->cart->cart_contents_count, WC()->cart->cart_contents_total]);
+    die();
+}
 
+add_action ('wp_ajax_nopriv_get_wc_cart_info', 'get_wc_cart_info') ;
 add_action('wp_enqueue_scripts', 'add_scripts');
 add_action('init', 'register_menus');
 add_shortcode('archive', 'create_posts_shortcode');

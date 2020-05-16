@@ -282,6 +282,10 @@ li .sub-menu {
     bottom:50px;
     right:50px;
     background:#1c1c1c;
+    transition:opacity 0.4s ease;
+}
+.custom-cart.hidden {
+    opacity:0;
 }
 .wc-block-all-products * {
    opacity:1;
