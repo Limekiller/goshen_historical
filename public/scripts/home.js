@@ -8,7 +8,7 @@ jQuery(document).ready(() => {
     });
     window.setTimeout(() => {
         advanceSlide(homepageArray, 1);
-    }, 20000);
+    }, 30000);
 
     jQuery(window).on('scroll', () => {
         checkVisibilityNews();
@@ -24,7 +24,7 @@ function advanceSlide(slideArray, slideToSetActive) {
        jQuery('.slide-container .active').removeClass('active');
        slideArray[slideToSetActive].addClass('active');
        jQuery('.slide-container').removeClass('closed');
-   }, 700);
+   }, 1100);
 
    if (slideToSetActive === 2) {
         slideToSetActive = 0;
@@ -34,7 +34,7 @@ function advanceSlide(slideArray, slideToSetActive) {
 
    window.setTimeout(() => {
         advanceSlide(slideArray, slideToSetActive);
-   }, 20000);
+   }, 30000);
 
 }
 
