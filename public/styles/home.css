@@ -36,6 +36,6 @@
 
 
 @keyframes load-slide {
-    from {transform:translateX(-50px);}
-    to {transform:translateX(0px);}
+    from {filter:blur(5px);transform:translateX(-50px);}
+    to {filter:blur(0px);transform:translateX(0px);}
 }

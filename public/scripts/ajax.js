@@ -18,7 +18,7 @@ function updateCart() {
                     let parsedResult = JSON.parse(result);
                     jQuery('.custom-cart').removeClass('hidden');
                     jQuery('.items').html(parsedResult[0]);
-                    jQuery('.price').html(parsedResult[1]);
+                    jQuery('.price').html('$'+parsedResult[1]);
                 }
             });
         }, 2000);

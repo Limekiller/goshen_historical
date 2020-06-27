@@ -282,7 +282,10 @@ li .sub-menu {
     bottom:50px;
     right:50px;
     background:#1c1c1c;
-    transition:opacity 0.4s ease;
+    transition:opacity 0.4s ease, transform 0.4s ease;
+}
+.custom-cart:hover {
+    transform:translateY(-10px);
 }
 .custom-cart.hidden {
     opacity:0;

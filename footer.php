@@ -7,14 +7,14 @@
             if ($num_items_in_cart and $pagename !== "cart") { 
                 $cart_opacity_class = '';
             } ?>
-            <div class='custom-cart <?php echo $cart_opacity_class;?>'>
-                <span>Cart</span><br />
-                <a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+            <a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+                <div class='custom-cart <?php echo $cart_opacity_class;?>'>
+                    <span><b>Cart</b></span><br />
                     <span class='items'><?php echo WC()->cart->cart_contents_count; ?></span> 
                     <span> items - </span>
                     <span class='price'><?php echo WC()->cart->get_cart_total(); ?></span>
-                </a>
-            </div>
+                </div>
+            </a>
             <div class='container right'>
                 <div class='row'> 
                     <div class='col-sm-12'>

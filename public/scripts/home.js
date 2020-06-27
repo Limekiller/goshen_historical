@@ -8,7 +8,7 @@ jQuery(document).ready(() => {
     });
     window.setTimeout(() => {
         advanceSlide(homepageArray, 1);
-    }, 30000);
+    }, 5000);
 
     jQuery(window).on('scroll', () => {
         checkVisibilityNews();
@@ -34,7 +34,7 @@ function advanceSlide(slideArray, slideToSetActive) {
 
    window.setTimeout(() => {
         advanceSlide(slideArray, slideToSetActive);
-   }, 30000);
+   }, 5000);
 
 }
 
